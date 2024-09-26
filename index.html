@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML Login Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="main">
+      <h1>Role Based Login Form</h1>
+      <h3>Enter your login credentials</h3>
+      <form action="" name="myform">
+        <label for="first"> Username: </label>
+        <input
+          type="text"
+          id="first"
+          name="first"
+          placeholder="Username"
+          required
+        />
+
+        <label for="password"> Password: </label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Password"
+          required
+        />
+
+        <div class="wrap">
+          <button type="submit" onclick="login()">Login</button>
+        </div>
+      </form>
+    </div>
+    <script>
+        
+
+        // console.log(name);
+        // console.log(pass);
+
+        user = {
+            name:"user",
+            pass:"user123"
+        }
+        admin ={
+            name:"admin",
+            pass:"admin123"
+        }
+
+        
+        function login(){
+            var name = document.myform.first.value;
+            var pass = document.myform.password.value;
+            // console.log(name);
+            // console.log(pass); 
+
+            if(name==user.name){
+                if(pass==user.pass){
+                    window.open("user.html")
+                    window.close();
+                }
+            }
+            if(name==admin.name){
+                if(pass==admin.pass){
+                    window.open("admin.html")
+                    window.close();
+                }
+            }
+        }
+        
+    </script>
+  </body>
+</html>
